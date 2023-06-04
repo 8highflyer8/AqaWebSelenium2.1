@@ -40,7 +40,6 @@ class DebitCardOrderTest {
 
     @Test
     void shouldTestV1() {
-        driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Василий Петров");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79123456789");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
