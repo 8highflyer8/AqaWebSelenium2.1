@@ -19,7 +19,7 @@ class DebitCardOrderTest {
 
     @BeforeAll
     static void setUpAll() {
-        System.setProperty("webdriver.chrome.driver", "E:/Test/aqa-code/web/selenium/driver/win/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "./driver/win/chromedriver.exe");
     }
 
     @BeforeEach
@@ -44,7 +44,7 @@ class DebitCardOrderTest {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Василий Петров");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79123456789");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
-        driver.findElement(By.cssSelector("[class='button button_view_extra button_size_m button_theme_alfa-on-white']")).click();
+        driver.findElement(By.cssSelector("[type='button']")).click();
         String expected = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
         String actual = driver.findElement(By.cssSelector("[data-test-id='order-success']")).getText().trim();
         assertEquals(expected, actual);
